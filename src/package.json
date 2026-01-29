@@ -1,12 +1,17 @@
 {
   "name": "src",
   "module": "index.ts",
-  "type": "module",
-  "private": true,
   "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.978.0",
+    "@aws-sdk/lib-dynamodb": "^3.978.0",
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
-  }
+  },
+  "private": true,
+  "scripts": {
+    "build": "bun build index.ts --outdir ../terraform --outfile index.js --target node --format cjs --external '@aws-sdk/*'"
+  },
+  "type": "module"
 }
